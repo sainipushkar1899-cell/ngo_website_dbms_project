@@ -1,0 +1,627 @@
+/* ============================================================
+   NGO Donation Management System - Stylesheet
+   Classic, warm, trustworthy NGO look with modern cleanliness.
+   No frameworks, no JS, no external resources.
+   ============================================================ */
+
+/* ---------- CSS Variables (Colour Palette) ---------- */
+:root {
+  --primary:      #1f5130;   /* deep green   - main brand colour   */
+  --bg:           #faf6ec;   /* cream        - page background      */
+  --accent:       #e0a030;   /* amber        - buttons / highlights */
+  --text:         #2b2b2b;   /* dark brown-grey - body text         */
+  --soft-green:   #e4efe2;   /* soft green   - table stripes / cards  */
+  --border:       #d4c9a8;   /* warm border  - borders on cards      */
+  --white:        #ffffff;
+  --danger:       #a83232;   /* deep red     - delete buttons        */
+  --danger-hover: #8a2828;
+}
+
+/* ---------- Reset & Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* ---------- Layout Wrapper ---------- */
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Header & Navigation ---------- */
+.site-header {
+  background-color: var(--primary);
+  border-bottom: 4px solid var(--accent);
+}
+
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.site-logo {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.site-logo span {
+  color: var(--accent);
+}
+
+/* Nav bar */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.nav a {
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Arial, Verdana, sans-serif;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* Highlight the current page */
+.nav a.active {
+  background-color: var(--accent);
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* ---------- Hero Section (Home) ---------- */
+.hero {
+  background-color: var(--soft-green);
+  border-bottom: 3px solid var(--border);
+  padding: 40px 0;
+}
+
+.hero .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 380px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  border-radius: 6px;
+  display: block;
+}
+
+/* Fallback background if image is missing */
+.hero-image {
+  background-color: var(--border);
+  border-radius: 6px;
+}
+
+/* ---------- Impact Figures ---------- */
+.impact-bar {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.impact-figure h3 {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.impact-figure p {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* ---------- Section Heading ---------- */
+.section {
+  padding: 30px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+/* ---------- Cause Cards Grid ---------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card-image {
+  background-color: var(--soft-green);
+  height: 160px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.card-body h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* ---------- About Section ---------- */
+.about-section {
+  background-color: var(--soft-green);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 30px 0;
+}
+
+.about-section .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  font-size: 22px;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 260px;
+  background-color: var(--border);
+  border-radius: 6px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  display: block;
+}
+
+/* ---------- Content Section Heading + Button ---------- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+/* ---------- Tables ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  background-color: var(--white);
+}
+
+thead th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--primary);
+}
+
+tbody td {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+/* Striped rows */
+tbody tr:nth-child(even) {
+  background-color: var(--soft-green);
+}
+
+tbody tr:hover {
+  background-color: #d6e7d3;
+}
+
+/* Row action links (Edit/Delete) */
+.row-actions a,
+.row-actions button {
+  display: inline-block;
+  font-size: 13px;
+  padding: 4px 10px;
+  margin-right: 4px;
+  border-radius: 4px;
+  font-family: Arial, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.row-actions a {
+  background-color: var(--accent);
+  color: var(--text);
+  border: 1px solid var(--accent);
+}
+
+.row-actions a:hover {
+  text-decoration: none;
+  background-color: #c98a22;
+}
+
+/* Delete button - tiny form with hidden id */
+.row-actions form {
+  display: inline;
+}
+
+.row-actions button.delete-btn {
+  background-color: var(--danger);
+  color: var(--white);
+  border: 1px solid var(--danger);
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.row-actions button.delete-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Total amount line under table */
+.total-line {
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 12px;
+  padding: 10px 0;
+  border-top: 2px solid var(--primary);
+}
+
+/* ---------- Forms ---------- */
+.form-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-card h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Arial, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  outline: 2px solid var(--soft-green);
+}
+
+.form-group .hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-family: Arial, Verdana, sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text);
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #c98a22;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--soft-green);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: #d4e7d2;
+  text-decoration: none;
+}
+
+.btn-cancel {
+  background-color: var(--white);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-cancel:hover {
+  background-color: var(--soft-green);
+  text-decoration: none;
+}
+
+/* Large donate button on home */
+.btn-donate {
+  display: inline-block;
+  padding: 12px 36px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: var(--accent);
+  color: var(--text);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-donate:hover {
+  background-color: #c98a22;
+  text-decoration: none;
+}
+
+/* ---------- Reports Page ---------- */
+.report-section {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.report-section h2 {
+  font-size: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 4px solid var(--accent);
+}
+
+.site-footer p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* ---------- Flash / Notice box ---------- */
+.notice {
+  background-color: var(--soft-green);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Error variant of the notice box */
+.notice-error {
+  background-color: #fde8e8;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* SQL block shown under each report heading */
+pre.sql-block {
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* ---------- Responsive Media Query ---------- */
+@media (max-width: 680px) {
+  /* Stack header: logo on top, nav below */
+  .site-header .wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  /* Hero becomes single column */
+  .hero .wrapper {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  /* Cards stack to single column */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About section stacks */
+  .about-section .wrapper {
+    flex-direction: column;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+
+  /* Impact figures stack */
+  .impact-bar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Page header buttons go full width */
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Form actions stack */
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  /* Tables scroll horizontally */
+  table {
+    font-size: 13px;
+  }
+}
